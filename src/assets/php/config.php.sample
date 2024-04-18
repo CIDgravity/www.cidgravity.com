@@ -1,0 +1,8 @@
+<?php
+	$website_name = "[WEBSITE NAME]"; // such as twinquasar.io
+	$cURL_key = '[SENDGRID_API_KEY]'; // can be found in sendgrid settings
+	$mail_from = '[VERIFIED EMAIL FROM SENDGRID UI]'; // must be a valid email, verified on sendgrid side
+	$mail_from_name = '[SENDER NAME]'; // sender name such as Jean DUPONT
+	$subject = "[CONTACT] New message from $website_name"; // mail subject, can include others variables
+	$recaptcha_secret = "[RECAPTCHA_SECRET]"; // recaptcha secret, default value can be used for twinquasar.io
+?>

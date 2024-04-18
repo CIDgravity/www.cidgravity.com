@@ -1,0 +1,196 @@
+---
+layout: landing
+title: Home
+---
+
+<!--Hero-->
+<div class="hero is-medium is-theme-primary">
+    {{> navbar-fade-kit1}}
+
+    <div id="main-hero" class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+                <div class="column is-7 has-text-left">
+                    <h1 class="title main-title text-bold is-2">
+                        A powerful pricing and client management for Filecoin storage providers
+                    </h1>
+
+                    <h2 class="subtitle is-5 body-color pt-20">
+                        Enable storage deals on your miner, and provide tailored pricing to your clients in just few clicks.
+                    </h2>
+            
+                    <!-- Counters and stats -->
+                    <!-- Content is dynamically updated by js script (see function in stats.js) -->
+                    <div class="pt-20 pb-20 content-wrapper">
+                        <div class="columns is-vcentered has-text-centered">
+                            <div class="column is-4">
+                                <div class="parallax-counter">
+                                    <div class="text-bold title is-2" id="storageDeals">
+                                        <i class="fa fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="counter-text subtitle" id="storageDealsDescription">
+                                        loading stats ...
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="parallax-counter">
+                                    <div class="text-bold title is-2" id="retrievalDeals">
+                                        <i class="fa fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="counter-text subtitle" id="retrievalDealsDescription">
+                                        loading stats ...
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="parallax-counter">
+                                    <div class="text-bold title is-2" id="activeVolume">
+                                        <i class="fa fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="counter-text subtitle" id="activeVolumeDescription">
+                                        loading stats ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sign up button -->
+                    <p class="pt-20 has-text-centered">
+                        <a href="https://app.cidgravity.com/" taret="_blank" class="button button-cta secondary-btn dark-text rounded z-index-2">
+                            Sign up now
+                        </a>
+                    </p>
+                </div>
+
+                <div class="column is-6">
+                    <figure class="image blob-figure">
+                        <img class="animated preFadeInUp fadeInUp" src="assets/img/cidg.svg" alt="CIDgravity" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Deployed in < 30 minutes -->
+<div class="section is-medium is-relative section-secondary">
+    <div class="container">
+        <div class="section-title-wrapper has-text-centered">
+            <h2 class="section-title-landing primary-text pb-50">Deployed in less than 30 minutes</h2>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="columns is-vcentered">
+
+                <div class="column is-4 has-text-centered">
+                    <h3 class="is-3 small-feature accent-text">Create your pricing models</h3>
+                    <p class="mb-20 is-tablet-padded accent-text">
+                        Create advanced and geared pricing for your best clients
+                    </p>
+                    <div class="feature-sm mt-30">
+                        <img class="is-card-reveal" src="assets/img/pricing-models.svg" alt="" />
+                    </div>
+                </div>
+
+                <div class="column is-4 has-text-centered">
+                    <h3 class="is-3 small-feature accent-text">Add your client</h3>
+                    <p class="mb-20 is-tablet-padded accent-text">
+                        Link specific exceptions and pricing to a group of clients
+                    </p>
+                    <div class="feature-sm mt-30">
+                        <img class="is-card-reveal" src="assets/img/add-client.svg" alt="" />
+                    </div>
+                </div>
+
+                <div class="column is-4 has-text-centered">
+                    <h3 class="is-3 small-feature accent-text">Track your deals</h3>
+                    <p class="mb-20 is-tablet-padded accent-text">
+                        Follow your storage business trends with reporting
+                    </p>
+                    <div class="feature-sm mt-30">
+                        <img class="is-card-reveal" src="assets/img/deal-rejected.png" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="has-text-centered pt-50">
+                <a href="https://app.cidgravity.com" target="_blank" class="button button-cta btn-align primary-btn rounded raised">
+                    Sign up now
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Manage everything through a user friendly interface -->
+<div class="section section-primary is-medium pt-20">
+    <div class="container">
+        <div class="columns is-vcentered mt-50">
+            <div class="column is-4 is-offset-1 is-hidden-tablet is-hidden-desktop">
+                <div class="minimal-feature">
+                    <h2 class="title is-2 white-text">Manage everything through a user friendly interface</h2>
+                    <div class="feature-content subtitle pt-20">
+                        Creating pricing rules has never easier. Define your conditions, use drag and drop to reorder them and linked it to a client.
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-6 is-offset-1">
+                <div class="minimal-feature-image">
+                    <img class="main-image has-light-shadow" src="assets/img/create-pricing-rules.svg" alt="" />
+                </div>
+            </div>
+
+            <div class="column is-4 is-offset-1 is-hidden-mobile">
+                <div class="minimal-feature body-color is-bold">
+                    <h2 class="title is-2 white-text">Manage everything through a user friendly interface</h2>
+                    <div class="feature-content white-text subtitle pt-20">
+                        Creating pricing rules has never easier. Define your conditions, use drag and drop to reorder them and linked it to a client.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Built by the storage provider community -->
+<div class="section section-secondary">
+    <div class="container">
+        <div class="section-title-wrapper has-text-centered pt-40 pb-40">
+            <h2 class="section-title-landing primary-text">Built by the storage provider community</h2>
+            <h4 class="subtitle accent-text">Lightweight - Secure - Privacy - Natively integrated with Lotus and the Filecoin storage provider environment</h4>
+        </div>
+
+        <div class="currencies-table">
+            <figure class="highlight highlight-block">
+                <pre>
+                    <code class="light-text html code-highlight">
+> Last login: Aug 17 19:48:00 on ttys000
+
+> 2022-06-05 21:11:00 true bafy2bzace[...]abci 0 StorageDealError f1zo3n62q6j5b3rfc4drj67d5e7hr5pqtygxy6s6i
+32GiB 0FIL 1494720 deal rejected: Deal rejected | <span style="color: red;">Price below acceptance for such deal: 0.000005 FIL</span>
+
+> 2022-06-05 21:11:00 true bafy2bzace[...]abci 0 StorageDealError f1zo3n62q6j5b3rfc4drj67d5e7hr5pqtygxy6s6i
+32GiB 0FIL 1494720 deal rejected: Busy | <span style="color: red;">Please retry later</span>
+
+> 2022-06-05 21:11:00 true bafy2bzace[...]abci 0 StorageDealError f1zo87fgg5b3rfc4drj67d5e7hr5pqtygxy6s6i
+32GiB 0FIL 1494720 deal rejected: Error | <span style="color: red;">Invalid Filecoin address</span>
+                    </code>
+                </pre>
+            </figure>
+        </div>
+
+        <div class="section-cta has-text-centered pb-50">
+            <a target="_blank" href="https://filecoinproject.slack.com/archives/C04SCAG37FH" class="button button-cta primary-btn is-rounded">
+                Join the community
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+{{> footer-side-dark}}
