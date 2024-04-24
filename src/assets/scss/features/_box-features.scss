@@ -153,7 +153,30 @@ TABLE OF CONTENTS
 3. Startup icon box
 ========================================================================== */
 
-.startup-icon-box {
+.startup-icon-box-secondary {
+  padding: 20px 0;
+
+  i {
+    font-size: 3.8rem;
+    font-weight: normal;
+    color: $secondary;
+  }
+
+  .box-title {
+    font-family: $font-sub;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    color: $secondary;
+    padding: 5px 0;
+  }
+
+  .box-content {
+    color: $secondary;
+  }
+}
+
+.startup-icon-box-primary {
   padding: 20px 0;
 
   i {
@@ -172,7 +195,7 @@ TABLE OF CONTENTS
   }
 
   .box-content {
-    color: $muted-grey;
+    color: $blue-grey;
   }
 }
 
@@ -184,7 +207,7 @@ TABLE OF CONTENTS
   i {
     font-size: 3.8rem;
     font-weight: normal;
-    color: $primary;
+    color: $secondary;
   }
 
   .box-title {
