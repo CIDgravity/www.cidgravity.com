@@ -103,20 +103,22 @@ TABLE OF CONTENTS
   border: 1px solid $fade-grey;
 
   img {
-    height: 50px;
+    height: 170px;
     display: block;
     margin: 10px auto;
+    border-radius: 50%;
   }
 
   .name {
+    font-size: 1.4rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
   }
 
   .position {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: $secondary;
+    color: $primary;
   }
 
   .social {
