@@ -63,16 +63,7 @@ function compileSCSS() {
   }
 
   return src([
-    'src/assets/scss/core.scss',
-    'src/assets/scss/teal.scss',
-    'src/assets/scss/green.scss',
-    'src/assets/scss/blue.scss',
-    'src/assets/scss/azur.scss',
-    'src/assets/scss/night.scss',
-    'src/assets/scss/yellow.scss',
-    'src/assets/scss/orange.scss',
-    'src/assets/scss/red.scss',
-    'src/assets/scss/purple.scss',
+    'src/assets/scss/core.scss'
   ])
     .pipe(
       sass({
