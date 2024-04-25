@@ -203,7 +203,7 @@ TABLE OF CONTENTS
 4. Wavy Icon Box
 ========================================================================== */
 
-.wavy-icon-box {
+.wavy-icon-box-secondary {
   i {
     font-size: 3.8rem;
     font-weight: normal;
@@ -213,7 +213,29 @@ TABLE OF CONTENTS
   .box-title {
     font-family: $font-sub;
     padding: 5px 0;
-    font-size: 14px;
+    font-size:20px;
+    line-height: 20px;
+    font-weight: 600;
+    color: $secondary;
+  }
+
+  .box-content {
+    color: $muted-grey;
+    font-size: 18px;
+  }
+}
+
+.wavy-icon-box-primary {
+  i {
+    font-size: 3.8rem;
+    font-weight: normal;
+    color: $primary;
+  }
+
+  .box-title {
+    font-family: $font-sub;
+    padding: 5px 0;
+    font-size:20px;
     line-height: 20px;
     font-weight: 600;
     color: $primary;
@@ -221,6 +243,7 @@ TABLE OF CONTENTS
 
   .box-content {
     color: $muted-grey;
+    font-size: 18px;
   }
 }
 
