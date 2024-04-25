@@ -64,6 +64,15 @@ function compileSCSS() {
 
   return src([
     'src/assets/scss/core.scss',
+    'src/assets/scss/teal.scss',
+    'src/assets/scss/green.scss',
+    'src/assets/scss/blue.scss',
+    'src/assets/scss/azur.scss',
+    'src/assets/scss/night.scss',
+    'src/assets/scss/yellow.scss',
+    'src/assets/scss/orange.scss',
+    'src/assets/scss/red.scss',
+    'src/assets/scss/purple.scss',
   ])
     .pipe(
       sass({
@@ -179,10 +188,13 @@ function resetPages(done) {
 function concatJS() {
   console.info(logSymbols.info, 'Concatenating Bulkit Javascript...')
   return src([
+    'src/assets/js/utilities/constants.js',
     'src/assets/js/utilities/utilities.js',
     'src/assets/js/components/pageloader.js',
     'src/assets/js/components/navbar.js',
     'src/assets/js/components/sidebar.js',
+    'src/assets/js/utilities/homepage.js',
+    'src/assets/js/utilities/demo.js',
     'src/assets/js/components/themeswitcher.js',
     'src/assets/js/components/animations.js',
     'src/assets/js/components/accordion.js',
@@ -207,8 +219,14 @@ function concatJS() {
     'src/assets/js/components/toast.js',
     'src/assets/js/components/uploader.js',
     'src/assets/js/components/video.js',
-    'src/assets/js/features/stats.js',
+    'src/assets/js/form/autocomplete.js',
+    'src/assets/js/form/bulma.js',
+    'src/assets/js/form/combo.js',
+    'src/assets/js/form/datetime.js',
+    'src/assets/js/form/input.js',
+    'src/assets/js/form/select.js',
     'src/assets/js/features/contact.form.js',
+    'src/assets/js/features/stats.js',
     'src/assets/js/main.js',
   ])
     .pipe(sourcemaps.init())
@@ -295,13 +313,6 @@ function browserSyncInit(done) {
     open: false,
   })
   return done()
-}
-
-function copyPhp() {
-  console.info(logSymbols.info, "Copying PHP files...");
-  return src(["src/assets/php/*"])
-    .pipe(dest("dist/assets/php"))
-    .pipe(browserSync.stream());
 }
 
 function copyImages() {
@@ -405,7 +416,6 @@ const dev = series(
   cleanDist,
   copyFont,
   copyData,
-  copyPhp,
   jsVendor,
   cssVendor,
   copyImages,
@@ -425,7 +435,6 @@ const build = series(
   cleanDist,
   copyFont,
   copyData,
-  copyPhp,
   jsVendor,
   cssVendor,
   compileHTML,

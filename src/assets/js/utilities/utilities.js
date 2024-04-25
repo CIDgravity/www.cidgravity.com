@@ -4,6 +4,20 @@ Utilities
 
 'use strict'
 
+function changeDemoImages() {
+  $('*[data-demo-src]').each(function () {
+    var newSrc = $(this).attr('data-demo-src')
+    if (newSrc !== undefined) {
+      $(this).attr('src', newSrc)
+    }
+  })
+
+  $('*[data-demo-background]').each(function () {
+    var newBg = $(this).attr('data-demo-background')
+    $(this).attr('data-background', newBg)
+  })
+}
+
 function initBackgroundImages() {
   if ($('.has-background-image').length) {
     $('.has-background-image').each(function () {

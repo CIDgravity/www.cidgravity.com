@@ -3,62 +3,38 @@ layout: landing
 title: Home
 ---
 
-<!--Hero-->
-<div class="hero is-fullheight is-theme-primary">
+<!-- Hero and navbar -->
+<div class="hero parallax is-cover is-relative is-fullheight" data-background="assets/img/hero-bg.svg" data-color="#000b44" data-color-opacity="0.2">
     {{> navbar-fade-kit1}}
 
     <div id="main-hero" class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-vcentered">
-                <div class="column is-7 has-text-left">
-                    <h1 class="title main-title text-bold is-7">
-                        The easiest way for enterprise to store and retrieve data from the decentralized web
+                <div class="column is-8 is-offset-2 has-text-centered">
+                    <h2 class="subtitle is-4 primary-text pt-4">SEPTEMBER 30, 2021</h2>
+                    <h1 class="parallax-hero-title is-smaller light-text">
+                        The State of Tech Branding Summit 2021.
                     </h1>
-            
-                    <!-- Counters and stats -->
-                    <!-- Content is dynamically updated by js script (see function in stats.js) -->
-                    <div class="pt-20 pb-20 content-wrapper">
-                        <div class="columns is-vcentered has-text-centered">
-                            <div class="column is-4">
-                                <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="storageDeals">
-                                        <i class="fa fa-spinner fa-spin"></i>
-                                    </div>
-                                    <div class="counter-text subtitle" id="storageDealsDescription">
-                                        loading stats ...
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="column is-4">
-                                <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="retrievalDeals">
-                                        <i class="fa fa-spinner fa-spin"></i>
-                                    </div>
-                                    <div class="counter-text subtitle" id="retrievalDealsDescription">
-                                        loading stats ...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="column is-4">
-                                <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="activeVolume">
-                                        <i class="fa fa-spinner fa-spin"></i>
-                                    </div>
-                                    <div class="counter-text subtitle" id="activeVolumeDescription">
-                                        loading stats ...
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="countdown" class="countdown is-light">
+                        <ul>
+                            <li><span id="days"></span>days</li>
+                            <li><span id="hours"></span>Hours</li>
+                            <li><span id="minutes"></span>Minutes</li>
+                            <li><span id="seconds"></span>Seconds</li>
+                        </ul>
                     </div>
-                </div>
+                    <br />
 
-                <div class="column is-6">
-                    <figure class="image blob-figure">
-                        <img class="animated preFadeInUp fadeInUp" src="assets/img/cidg.svg" alt="CIDgravity" />
-                    </figure>
+                    <p class="has-text-centered is-centered buttons">
+                        <a href="#start" class="button button-cta btn-align primary-btn z-index-2 scroll-link">
+                            Buy Tickets
+                        </a>
+
+                        <a href="#" class="button button-cta btn-align z-index-2">
+                            Learn More
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>

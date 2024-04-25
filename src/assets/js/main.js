@@ -21,6 +21,11 @@ $(document).ready(function ($) {
 
   observer.observe()
 
+  //3. Change to demo content (if env)
+  if (env === 'development') {
+    changeDemoImages()
+  }
+
   //4. Init Feather icons
   feather.replace()
 
@@ -86,6 +91,7 @@ $(document).ready(function ($) {
   initPlayers()
 
   //10. Demo
+  initDemo()
   initScrollspyNav()
   initParallax()
   initBackToTop()
