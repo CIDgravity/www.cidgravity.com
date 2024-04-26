@@ -258,7 +258,7 @@ TABLE OF CONTENTS
 
     &.quick-feature {
       font-size: 2.7rem;
-      color: $blue-grey;
+      color: $primary;
       position: relative;
 
       &.is-smaller {
@@ -292,6 +292,10 @@ TABLE OF CONTENTS
   .icon-subtitle i {
     font-size: 2.4rem;
     color: $primary;
+  }
+
+  .icon-subtitle img {
+    height: 50px;
   }
 
   .title-divider {

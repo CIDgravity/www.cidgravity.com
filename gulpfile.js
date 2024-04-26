@@ -87,7 +87,9 @@ function purgeCSS() {
         safelist: {
           standard: [
             'navbar-faded',
+            'navbar-faded-primary',
             'navbar-light',
+            'navbar-primary',
             'navbar-placeholder',
             'is-transparent',
             'parallax-overlay',

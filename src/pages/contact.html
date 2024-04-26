@@ -1,0 +1,103 @@
+---
+layout: landing
+title: Contact
+---
+
+<!-- Navbar -->
+<div class="hero is-relative is-theme-primary">
+    {{> navbar-fade}}
+
+    <div id="main-hero" class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+                <div class="column is-12 pt-50">
+                    <h2 class="title is-1 has-text-centered light-text">
+                        Get in Touch
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-feature-grey is-small">
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="columns is-multiline">
+                        <div class="column is-12">
+                            <article class="message msg-success" id="mail-status"></article>
+
+                            <div id="mail-status"></div>
+
+                            <div class="field">
+                                <label>
+                                    Name *
+                                    <span id="name-info" class="info"></span>
+                                </label>
+
+                                <div class="control">
+                                    <input name="name" id="name" class="input is-medium" type="text" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-6">
+                            <div class="field">
+                                <label>
+                                    Email *
+                                    <span id="email-info" class="info"></span>
+                                </label>
+
+                                <div class="control">
+                                    <input name="email" id="email" type="email" class="input is-medium" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-6">
+                            <div class="field">
+                                <label>
+                                    Phone number *
+                                    <span id="phoneNumber-info" class="info"></span>
+                                </label>
+
+                                <div class="control">
+                                    <input name="phoneNumber" id="phoneNumber" type="text" class="input is-medium" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-12">
+                            <div class="field">
+                                <label>
+                                    Message *
+                                    <span id="message-info" class="info"></span>
+                                </label>
+
+                                <div class="control">
+                                    <textarea name="message" id="message" class="textarea is-default-focus" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-12">
+                            <div class="field">
+                                <div class="control">
+                                    <div class="g-recaptcha" data-sitekey="6LfG3pQmAAAAADxxe9C2Z42EPhcbeblhhRtYAEUY"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-12">
+                            <button type="submit" onClick="sendContact();" name="submit" class="button button-cta primary-btn startup-contact-button raised is-bold">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

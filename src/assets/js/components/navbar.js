@@ -27,6 +27,30 @@ function initNavbar() {
     })
   }
 
+  if ($('.navbar-wrapper.navbar-fade.navbar-primary').length) {
+    $('.navbar-wrapper.navbar-fade').wrap(
+      '<div class="navbar-placeholder"></div>',
+    )
+    $('.navbar-placeholder').height(
+      jQuery('.navbar-wrapper.navbar-fade').outerHeight(),
+    )
+
+    $(window).on('scroll', function () {
+      var height = $(window).scrollTop()
+      if (height > 65) {
+        $('.navbar-wrapper .navbar-brand.is-index').removeClass('is-hidden')
+        $('.navbar-wrapper.navbar-fade.is-transparent')
+          .removeClass('is-transparent navbar-light')
+          .addClass('navbar-faded-primary')
+      } else {
+        $('.navbar-wrapper .navbar-brand.is-index').addClass('is-hidden')
+        $('.navbar-wrapper')
+          .removeClass('navbar-faded-primary')
+          .addClass('is-transparent navbar-light')
+      }
+    })
+  }
+
   //Navbar fade
   if ($('.navbar-wrapper.navbar-fade.navbar-default').length) {
     $('.navbar-wrapper.navbar-fade').wrap(

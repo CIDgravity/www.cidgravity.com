@@ -162,6 +162,10 @@ TABLE OF CONTENTS
     color: $secondary;
   }
 
+  img {
+    height: 70px;
+  }
+
   .box-title {
     font-family: $font-sub;
     font-size: 16px;
@@ -230,6 +234,10 @@ TABLE OF CONTENTS
     font-size: 3.8rem;
     font-weight: normal;
     color: $primary;
+  }
+
+  img {
+    max-height: 70px;
   }
 
   .box-title {
