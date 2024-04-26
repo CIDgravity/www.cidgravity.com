@@ -1,9 +1,12 @@
 <?php
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
 	// DO NOT EDIT AFTER THIS LINE
-	include('../../../php/config.php');
+	include('./config.php');
 	
-	function handleContactFormToSlack($mail_content, $slack_token, $recaptcha_secret)
+	function handleContactFormToSlack($contact_name, $contact_email, $contact_phone, $contact_message, $slack_webhook_endpoint, $recaptcha_secret)
 	{
 		// Check recaptcha before preparing the email
 		$captcha = $_POST["captcha"];
@@ -14,18 +17,48 @@
 			print "<div class='alert alert-danger'>Wrong captcha verification. Please reload the page and try again</div>";
 
 		} else {
-			$ch = curl_init("https://slack.com/api/chat.postMessage");
-			$data = http_build_query([
-				"token" => $slack_token,
-				"channel" => "#contact-form",
-				"text" => $mail_content,
-				"username" => "MySlackBot",
-			]);
-	
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			$data = '{
+				"blocks": [
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "New request from cidgravity.com contact form has arrived!\nHere is all the details you need to know"
+						}
+					},
+					{
+						"type": "divider"
+					},
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "\n\n*Contact name:* ' . $contact_name . '\n*Email:* ' . $contact_email . '\n*Phone number:* ' . $contact_phone . '"
+						}
+					},
+					{
+						"type": "divider"
+					},
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "' . $contact_message . '"
+						}
+					}
+				]
+			}';
+
+			// Initialize curl and send the request
+			$ch = curl_init($slack_webhook_endpoint);
+			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+				'Content-Type: application/json',
+				'Content-Length: ' . strlen($data)
+			));
 
 			$response = curl_exec($ch);
 			$err = curl_error($ch);
@@ -45,9 +78,6 @@
 	$user_phone = $_POST["phoneNumber"];
 	$message = $_POST["message"];
 
-	// Build the mail body with every form fields values
-	$mail_content = "<h2>New contact request</h2>A new visitor has sent you a request via the site's contact form. Here is all his information<ul><li>Name: $user_name</li><li>Email: $user_email</li><li>Phone: $user_phone</li></ul><br /><hr /><br />Here is also the content of his request:<br /><br /><strong>$message</strong>";
-
 	// Call the function to send the email using Sendgrid API
-	handleContactFormToSlack($mail_content, $slack_token, $recaptcha_secret);
+	handleContactFormToSlack($user_name, $user_email, $user_phone, $message, $slack_webhook_endpoint, $recaptcha_secret);
 ?>

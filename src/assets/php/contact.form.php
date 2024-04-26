@@ -8,57 +8,67 @@
 	
 	function handleContactFormToSlack($contact_name, $contact_email, $contact_phone, $contact_message, $slack_webhook_endpoint, $recaptcha_secret)
 	{
-		$data = '{
-			"blocks": [
-				{
-					"type": "section",
-					"text": {
-						"type": "mrkdwn",
-						"text": "New request from cidgravity.com contact form has arrived!\nHere is all the details you need to know"
-					}
-				},
-				{
-					"type": "divider"
-				},
-				{
-					"type": "section",
-					"text": {
-						"type": "mrkdwn",
-						"text": "\n\n*Contact name:* ' . $contact_name . '\n*Email:* ' . $contact_email . '\n*Phone number:* ' . $contact_phone . '"
-					}
-				},
-				{
-					"type": "divider"
-				},
-				{
-					"type": "section",
-					"text": {
-						"type": "mrkdwn",
-						"text": "' . $contact_message . '"
-					}
-				}
-			]
-		}';
+		// Check recaptcha before preparing the email
+		$captcha = $_POST["captcha"];
+		$verify = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$captcha), true);
+		$success = $verify["success"];
 
-		// Initialize curl and send the request
-		$ch = curl_init($slack_webhook_endpoint);
-		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		if ($success == false) {
+			print "<div class='alert alert-danger'>Wrong captcha verification. Please reload the page and try again</div>";
 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Content-Length: ' . strlen($data)
-		));
-
-		$response = curl_exec($ch);
-		$err = curl_error($ch);
-		curl_close($ch);
-
-		if ($err) {
-			print "<div class='alert alert-danger'>Unable to send your request, please try again in few minutes</div>";
 		} else {
-			print "<div class='alert alert-success'>Your request has been sent to our team !</div>";
+			$data = '{
+				"blocks": [
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "New request from cidgravity.com contact form has arrived!\nHere is all the details you need to know"
+						}
+					},
+					{
+						"type": "divider"
+					},
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "\n\n*Contact name:* ' . $contact_name . '\n*Email:* ' . $contact_email . '\n*Phone number:* ' . $contact_phone . '"
+						}
+					},
+					{
+						"type": "divider"
+					},
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "' . $contact_message . '"
+						}
+					}
+				]
+			}';
+
+			// Initialize curl and send the request
+			$ch = curl_init($slack_webhook_endpoint);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+				'Content-Type: application/json',
+				'Content-Length: ' . strlen($data)
+			));
+
+			$response = curl_exec($ch);
+			$err = curl_error($ch);
+			curl_close($ch);
+
+			if ($err) {
+				print "<div class='alert alert-danger'>Unable to send your request, please try again in few minutes</div>";
+			} else {
+				print "<div class='alert alert-success'>Your request has been sent to our team !</div>";
+			}
 		}
 	}
 

@@ -8,7 +8,7 @@ function sendContact() {
 		    data:'name='+$("#name").val()+'&captcha='+$("#g-recaptcha-response").val()+'&email='+$("#email").val()+'&phoneNumber='+$("#phoneNumber").val()+'&message='+$(message).val(),
 		    type: "POST",
 		    success:function(data){
-				var successBlock = '<h4 id="mail-status" class="message-header">' + data + '</h4>';
+				var successBlock = '<h4 class="message-header">' + data + '</h4>';
 		        $("#mail-status").html(successBlock);
 		    },
 		    error:function (){
