@@ -1,4 +1,4 @@
 <?php
-	$slack_webhook_endpoint = "[SLACK_BOT_TOKEN]"; // need to create a slack app to get this app token
-	$recaptcha_secret = "[RECAPTCHA_SECRET]"; // recaptcha secret, default value can be used for twinquasar.io
+	$slack_webhook_endpoint = "[SLACK_WEBHOOK_ENDPOINT]"; // need to create a slack app to get this url
+	$recaptcha_secret = "[RECAPTCHA_SECRET]"; // recaptcha secret, after configuring on google recaptcha
 ?>

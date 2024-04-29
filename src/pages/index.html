@@ -4,14 +4,14 @@ title: Home
 ---
 
 <!-- Hero and navbar -->
-<div class="hero parallax is-cover is-relative is-fullheight" data-background="assets/img/hero-bg.svg" data-color="#000b44" data-color-opacity="0.2">
+<div class="hero parallax is-cover is-relative is-fullheight" id="with-stats" data-background="assets/img/hero-bg.svg" data-color="#000b44" data-color-opacity="0.2">
     {{> navbar-fade-index}}
 
     <div id="main-hero" class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-vcentered">
                 <div class="column is-12 has-text-centered">
-                    <img class="featured-svg-lg pb-80" src="assets/img/logos/logo-cidg-light-hd.svg" alt="CIDgravity" />
+                    <img class="featured-svg pb-80" src="assets/img/logos/logo-cidg-light-hd.svg" alt="CIDgravity" />
 
                     <h1 class="parallax-hero-title is-smaller light-text">
                         The seamless gateway to the decentralized web
@@ -21,48 +21,63 @@ title: Home
                         No bullshit. No headache.
                     </h1>
 
+                    <div class="pt-50 content-wrapper">
+                        <div class="columns is-vcentered has-text-centered">
+                            <div class="column is-4">
+                                <div class="parallax-counter">
+                                    <div class="text-bold title is-2" id="dataStoredToDate">
+                                        <i class="fa white-text fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="counter-text subtitle" id="dataStoredToDateDescription">
+                                        data stored to date
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="parallax-counter">
+                                    <div class="text-bold title is-2" id="transactionCompleted">
+                                        <i class="fa white-text fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="counter-text subtitle" id="transactionCompletedDescription">
+                                        transactions completed
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="parallax-counter">
+                                    <div class="text-bold title is-2" id="currentLiveData">
+                                        <i class="fa white-text fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="counter-text subtitle" id="currentLiveDataDescription">
+                                        current live data
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="huge-pt pb-20 content-wrapper">
                         <div class="columns is-vcentered has-text-centered">
-                            <div class="column is-3">
+                            <div class="column is-6">
                                 <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="storageDeals">
+                                    <div class="text-bold title is-2" id="clientsServed">
                                         <i class="fa white-text fa-spinner fa-spin"></i>
                                     </div>
-                                    <div class="counter-text subtitle" id="storageDealsDescription">
-                                        loading stats ...
+                                    <div class="counter-text subtitle" id="clientsServedDescription">
+                                        clients served
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="column is-3">
+                            <div class="column is-6">
                                 <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="retrievalDeals">
+                                    <div class="text-bold title is-2" id="storageProvidersEngaged">
                                         <i class="fa white-text fa-spinner fa-spin"></i>
                                     </div>
-                                    <div class="counter-text subtitle" id="retrievalDealsDescription">
-                                        loading stats ...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="column is-3">
-                                <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="activeVolume">
-                                        <i class="fa white-text fa-spinner fa-spin"></i>
-                                    </div>
-                                    <div class="counter-text subtitle" id="activeVolumeDescription">
-                                        loading stats ...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="column is-3">
-                                <div class="parallax-counter">
-                                    <div class="text-bold title is-2" id="activeVolume">
-                                        <i class="fa white-text fa-spinner fa-spin"></i>
-                                    </div>
-                                    <div class="counter-text subtitle" id="activeVolumeDescription">
-                                        loading stats ...
+                                    <div class="counter-text subtitle" id="storageProvidersEngagedDescription">
+                                        storage providers engaged
                                     </div>
                                 </div>
                             </div>

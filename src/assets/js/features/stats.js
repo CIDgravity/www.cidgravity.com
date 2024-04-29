@@ -1,27 +1,66 @@
 function formatToBestSizeUnit(t, e = 2) {
-    if (!+t) return "0 Bytes";
-    const a = e < 0 ? 0 : e,
-        o = Math.floor(Math.log(t) / Math.log(1024));
+    if (!+t) {
+        return {
+            value: 0,
+            unit: "B"
+        }
+    }
+
+    const a = e < 0 ? 0 : e
+    const o = Math.floor(Math.log(t) / Math.log(1024));
+
     return {
         value: parseFloat((t / Math.pow(1024, o)).toFixed(a)),
-        unit: ["Bytes", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"][o]
+        unit: ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"][o]
     }
 }
 
-function displayCounterValue(t, e, a, o = 2) {
-    document.getElementById(t).innerText = e.toFixed(o), document.getElementById(t).classList.add("counter"), document.getElementById(t).classList.add("counter-number"), document.getElementById(t + "Description").innerText = a
+function displayCounterValue(className, counterValue, counterUnit = "", decimals = 2) {
+
+    // apply toFixed only if number is a decimal, to avoid 520.00 in output value
+    if (counterValue % 1 == 0) {
+        if (counterUnit != "") {
+            document.getElementById(className).innerText = counterValue + " " + counterUnit;
+        } else {
+            document.getElementById(className).innerText = counterValue;
+        }
+    } else {
+        if (counterUnit != "") {
+            document.getElementById(className).innerText = counterValue.toFixed(decimals) + " " + counterUnit;
+        } else {
+            document.getElementById(className).innerText = counterValue.toFixed(decimals);
+        }
+    }
+
+    document.getElementById(className).classList.add("counter");
+    document.getElementById(className).classList.add("counter-number");
 }
+
 async function loadCidgStats() {
     try {
         const t = await fetch("https://penguin-stirring-ghastly.ngrok-free.app/v1/get-cidg-stats"),
             e = await t.json();
         if (200 === t.status) {
-            displayCounterValue("storageDeals", e.result.totalStorageDeals / 1e6, "number of storage deals analysed"), displayCounterValue("retrievalDeals", e.result.totalRetrievalDeals / 1e6, "number of retrieval deals analysed");
-            const t = formatToBestSizeUnit(e.result.totalActiveVolume);
-            displayCounterValue("activeVolume", t.value, t.unit + " of active deals analysed")
+            displayCounterValue("clientsServed", e.result.clientServed);
+            displayCounterValue("transactionCompleted", e.result.transactionsCompleted / 1e6, "m");
+            displayCounterValue("storageProvidersEngaged", e.result.storageProvidersEngaged);
+            
+            // for dataStoredToDate and currentLiveData, convert value from bytes to best unit (TiB, GiB, PiB ...)
+            const dataStoredToDate = formatToBestSizeUnit(e.result.dataStoredToDate);
+            displayCounterValue("dataStoredToDate", dataStoredToDate.value, dataStoredToDate.unit)
+
+            const currentLiveData = formatToBestSizeUnit(e.result.currentLiveData);
+            displayCounterValue("currentLiveData", currentLiveData.value, currentLiveData.unit)
         }
     } catch (t) {
         console.error(t)
     }
 }
-window.onload = loadCidgStats();
+
+// load stats only for homepage (index.html)
+// for this, we use specific div id called "with-stats"
+$(document).ready(function ($) {
+    if ($('#with-stats').length) {
+        loadCidgStats()
+    }
+})
