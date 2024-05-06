@@ -214,6 +214,10 @@ TABLE OF CONTENTS
     color: $secondary;
   }
 
+  img {
+    max-height: 70px;
+  }
+
   .box-title {
     font-family: $font-sub;
     padding: 5px 0;
@@ -235,11 +239,7 @@ TABLE OF CONTENTS
     font-weight: normal;
     color: $primary;
   }
-
-  img {
-    max-height: 70px;
-  }
-
+  
   .box-title {
     font-family: $font-sub;
     padding: 5px 0;

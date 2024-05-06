@@ -36,7 +36,8 @@ TABLE OF CONTENTS
 ========================================================================== */
 
 .featured-svg {
-  max-width: 450px;
+  max-width: 400px;
+  max-height: 280px;
 
   &.is-large {
     max-width: 540px;
@@ -63,7 +64,7 @@ TABLE OF CONTENTS
   .featured-svg,
   .featured-svg-lg,
   .featured-drawing {
-    max-width: 100% !important;
+    max-width: 70% !important;
   }
 }
 

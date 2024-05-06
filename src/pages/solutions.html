@@ -21,12 +21,12 @@ title: Solutions
 <!-- Drag and drop offer -->
 <div id="simple-needs" class="section section-feature-grey is-medium">
     <div class="container">
-        <div class="section-title-wrapper">
+        <div class="section-title-wrapper is-hidden-mobile">
             <h2 class="title section-title has-text-centered primary-text">
                 Drag and drop
             </h2>
             
-            <div class="subtitle accent-text section-subtitle has-text-centered is-tablet-padded">
+            <div class="subtitle accent-text section-subtitle has-text-centered is-tablet-padded is-hidden-mobile">
                 Targetted to anyone looking to store data to the Decentralized web, <br /> without any knowledge about Filecoin or decentralized web
             </div>
         </div>
@@ -54,7 +54,7 @@ title: Solutions
             <div class="columns is-vcentered pb-40">
 
                 <!-- This column will display only on mobile -->
-                <div class="column is-4 is-offset-1 is-hidden-tablet is-hidden-desktop">
+                <div class="column is-4 is-offset-1 is-hidden-desktop">
                     <div class="title primary-text quick-feature text-bold">
                         <h2>Natively compatible with many tools</h2>
                     </div>
@@ -210,7 +210,7 @@ title: Solutions
 </div>
 
 <!--Deep integration (SDK) -->
-<div id="dweb-builders" class="section is-medium">
+<div id="dweb-builders" class="section section-white is-medium">
     <div class="container">
         <div class="section-title-wrapper pb-50">
             <h2 class="title primary-text section-title has-text-centered">
@@ -225,9 +225,14 @@ title: Solutions
             <div class="columns is-vcentered is-multiline has-text-centered">
                 <div class="column is-4">
                     <div class="wavy-icon-box-primary">
-                        <div class="is-icon-reveal pb-10">
-                            <img src="assets/img/icons/data-lifecycle.svg" alt="Data status and lifecycle"/>
+                        <div class="is-icon-reveal pb-10 mt-50 is-hidden-desktop">
+                            <img class="img-small" src="assets/img/icons/data-lifecycle.svg" alt="Data status and lifecycle"/>
                         </div>
+
+                        <div class="is-icon-reveal pb-10 is-hidden-mobile">
+                            <img class="img-lg" src="assets/img/icons/data-lifecycle.svg" alt="Data status and lifecycle"/>
+                        </div>
+
                         <div class="box-title">Data status and lifecycle</div>
                         <p class="accent-text box-content is-tablet-padded pt-10">
                             Get access to our API to get data status and lifecycle
@@ -237,9 +242,14 @@ title: Solutions
 
                 <div class="column is-4">
                     <div class="wavy-icon-box-primary">
-                        <div class="is-icon-reveal pb-10">
-                            <img src="assets/img/icons/reputation.svg" alt="Miner reputation and availability"/>
+                        <div class="is-icon-reveal pb-10 mt-50 is-hidden-desktop">
+                            <img class="img-small" src="assets/img/icons/reputation.svg" alt="Miner reputation and availability"/>
                         </div>
+
+                        <div class="is-icon-reveal pb-10 is-hidden-mobile">
+                            <img class="img-lg" src="assets/img/icons/reputation.svg" alt="Miner reputation and availability"/>
+                        </div>
+
                         <div class="box-title">Miner reputation and availability</div>
                         <p class="accent-text box-content is-tablet-padded pt-10">
                             With API's get metrics related to storage providers availability
@@ -249,9 +259,14 @@ title: Solutions
 
                 <div class="column is-4">
                     <div class="wavy-icon-box-primary">
-                        <div class="is-icon-reveal pb-10">
-                            <img src="assets/img/icons/api.svg" alt="Accelerate your onboarding"/>
+                        <div class="is-icon-reveal pb-10 mt-50 is-hidden-desktop">
+                            <img class="img-small" src="assets/img/icons/api.svg" alt="Accelerate your onboarding"/>
                         </div>
+
+                        <div class="is-icon-reveal pb-10 is-hidden-mobile">
+                            <img class="img-lg" src="assets/img/icons/api.svg" alt="Accelerate your onboarding"/>
+                        </div>
+
                         <div class="box-title">Accelerate your onboarding</div>
                         <p class="accent-text box-content is-tablet-padded pt-10">
                             Use your API access to get market/reputation and SP healthcheck endpoints

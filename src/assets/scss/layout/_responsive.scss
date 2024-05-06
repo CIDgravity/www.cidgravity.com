@@ -173,10 +173,10 @@ TABLE OF CONTENTS
   .navbar {
     &.navbar-light {
       &.is-dark-mobile {
-        background: $sidebar !important;
+        background: $primary !important;
 
         .navbar-menu {
-          background: $sidebar !important;
+          background: $primary !important;
 
           a {
             color: $white;
@@ -587,7 +587,7 @@ TABLE OF CONTENTS
   }
 
   .navbar {
-    &.navbar-light {
+    &.navbar-primary {
       &.is-dark-mobile {
         background: $sidebar;
 

@@ -48,6 +48,10 @@ TABLE OF CONTENTS
     background-color: $primary;
   }
 
+  &.section-white {
+    background-color: $white;
+  }
+
   &.section-secondary {
     background-color: $secondary;
   }
