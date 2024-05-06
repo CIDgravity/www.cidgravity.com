@@ -123,7 +123,6 @@ $(document).ready(function ($) {
   initSearchBox()
   initNavigationDots()
   initFaq()
-  initAuth()
   initAnimations()
   initCanvas()
   initParticles()

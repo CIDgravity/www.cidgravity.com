@@ -17,38 +17,50 @@ function formatToBestSizeUnit(t, e = 2) {
 
 function displayCounterValue(className, counterValue, counterUnit = "", decimals = 2) {
 
-    // apply toFixed only if number is a decimal, to avoid 520.00 in output value
-    if (counterValue % 1 == 0) {
-        if (counterUnit != "") {
-            document.getElementById(className).innerText = counterValue + " " + counterUnit;
-        } else {
-            document.getElementById(className).innerText = counterValue;
+    // wrap in try/catch to display N/A in case of error (and avoid infinite loading)
+    try {
+        
+        if (counterValue == null || typeof counterValue != 'number') {
+            document.getElementById(className).innerText = "N/A";
+            return
         }
-    } else {
-        if (counterUnit != "") {
-            document.getElementById(className).innerText = counterValue.toFixed(decimals) + " " + counterUnit;
-        } else {
-            document.getElementById(className).innerText = counterValue.toFixed(decimals);
-        }
-    }
 
-    document.getElementById(className).classList.add("counter");
-    document.getElementById(className).classList.add("counter-number");
+        // apply toFixed only if number is a decimal, to avoid 520.00 in output value
+        if (counterValue % 1 == 0) {
+            if (counterUnit != "") {
+                document.getElementById(className).innerText = counterValue + " " + counterUnit;
+            } else {
+                document.getElementById(className).innerText = counterValue;
+            }
+        } else {
+            if (counterUnit != "") {
+                document.getElementById(className).innerText = counterValue.toFixed(decimals) + " " + counterUnit;
+            } else {
+                document.getElementById(className).innerText = counterValue.toFixed(decimals);
+            }
+        }
+
+        document.getElementById(className).classList.add("counter");
+        document.getElementById(className).classList.add("counter-number");
+
+    } catch (t) {
+        document.getElementById(className).innerText = "N/A";
+    }
 }
 
 async function loadCidgStats() {
     try {
+
+        // TODO: update the URL to https://service.cidgravity.com/v1/get-cidg-stats after tests
         const t = await fetch("https://penguin-stirring-ghastly.ngrok-free.app/v1/get-cidg-stats"),
-            e = await t.json();
+        e = await t.json();
+
         if (200 === t.status) {
             displayCounterValue("clientsServed", e.result.clientServed);
             displayCounterValue("transactionCompleted", e.result.transactionsCompleted / 1e6, "m");
             displayCounterValue("storageProvidersEngaged", e.result.storageProvidersEngaged);
             
-            // for dataStoredToDate and currentLiveData, convert value from bytes to best unit (TiB, GiB, PiB ...)
-            const dataStoredToDate = formatToBestSizeUnit(e.result.dataStoredToDate);
-            displayCounterValue("dataStoredToDate", dataStoredToDate.value, dataStoredToDate.unit)
-
+            // for currentLiveData, convert value from bytes to best unit (TiB, GiB, PiB ...)
             const currentLiveData = formatToBestSizeUnit(e.result.currentLiveData);
             displayCounterValue("currentLiveData", currentLiveData.value, currentLiveData.unit)
         }
