@@ -1,0 +1,97 @@
+.compare-pricing th, .compare-pricing td {
+  padding: 25px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.compare-pricing tbody tr th {
+  text-align: left;
+}
+
+.compare-pricing h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.compare-pricing tbody tr td, .compare-pricing em {
+  border-right: none;
+  font-size: 16px;
+  color: #616675;
+}
+
+.compare-pricing em {
+  font-weight: 400;
+}
+
+.fa-check {
+  color: $primary;
+}
+
+.fa-xmark {
+  color: gray;
+}
+
+.table-responsive {
+  overflow-x: inherit !important;
+}
+
+.compare-pricing .price {
+  color: $primary;
+}
+
+tr {
+  background-color: #fff;
+  border-color: #e1e7f0;
+}
+
+tbody th {
+  color: $primary;
+  font-weight: normal !important;
+}
+
+.compare-pricing th .jv-help {
+  font-size: 0.5rem;
+}
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom: 1px solid #eee;
+}
+
+/* Help tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
