@@ -253,6 +253,47 @@ footer {
 ========================================================================== */
 
 footer {
+  &.footer-light-left {
+    padding: 1.5rem 1.5rem !important;
+    background: $secondary;
+
+    .footer-nav-right {
+      display: flex;
+      justify-content: flex-end;
+      align-content: center;
+      align-items: center;
+
+      .footer-nav-link {
+        margin: 0 10px;
+        padding: 20px 0;
+        color: $primary !important;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          color: $accent !important;
+        }
+
+        &.is-active {
+          color: $primary !important;
+          border-bottom: 2px solid $primary !important;
+        }
+      }
+    }
+
+    .level-item .icon {
+      color: $primary;
+      transition: all 0.5s;
+
+      :hover {
+        color: $accent;
+      }
+    }
+
+    .moto {
+      color: $primary;
+    }
+  }
+
   &.footer-dark-left {
     padding: 1.5rem 1.5rem !important;
     background: $primary;
@@ -270,12 +311,11 @@ footer {
         border-bottom: 2px solid transparent;
 
         &:hover {
-          color: $smoke-white !important;
-          border-bottom: 2px solid $white;
+          color: $secondary !important;
         }
 
         &.is-active {
-          color: $primary !important;
+          color: $secondary !important;
           border-bottom: 2px solid $primary !important;
         }
       }
@@ -286,7 +326,7 @@ footer {
       transition: all 0.5s;
 
       :hover {
-        color: $primary;
+        color: $secondary;
       }
     }
 

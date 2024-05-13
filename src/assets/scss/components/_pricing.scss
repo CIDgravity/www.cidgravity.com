@@ -1708,6 +1708,68 @@ TABLE OF CONTENTS
   margin-bottom: 20px;
 }
 
+.is-pricing-card-bordered {
+  border-radius: 6px;
+  border: 1px solid $primary;
+
+  .pricing-icon {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: #e0ecff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 2;
+
+    img {
+      height: 38px;
+      width: 38px;
+      display: block;
+    }
+  }
+
+  .plan-name {
+    font-family: $font-main;
+    font-size: 1.1rem;
+    padding: 20px 0;
+  }
+
+  .separator {
+    border-bottom: 1px solid $fade-grey;
+  }
+
+  .features-list {
+    padding: 10px 0;
+
+    li {
+      padding: 4px 0;
+      color: $muted-grey;
+    }
+  }
+
+  .plan-price {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $primary;
+
+    &:before {
+      content: '$';
+      font-size: 60%;
+    }
+  }
+
+  .price-per {
+    font-weight: 500;
+  }
+
+  .plan-action {
+    margin-top: 20px;
+  }
+}
+
 .is-pricing-card {
   border-radius: 6px;
 
@@ -1734,6 +1796,9 @@ TABLE OF CONTENTS
     font-family: $font-main;
     font-size: 1.1rem;
     padding: 20px 0;
+  }
+
+  .separator {
     border-bottom: 1px solid $fade-grey;
   }
 
@@ -1747,14 +1812,9 @@ TABLE OF CONTENTS
   }
 
   .plan-price {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: $primary;
-
-    &:before {
-      content: '$';
-      font-size: 60%;
-    }
   }
 
   .price-per {

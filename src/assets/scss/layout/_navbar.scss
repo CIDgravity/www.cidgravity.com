@@ -90,6 +90,10 @@ TABLE OF CONTENTS
           }
         }
       }
+
+      &.has-border-bottom {
+        border-bottom: 1px solid $white;
+      }
     }
   }
 

@@ -3,98 +3,219 @@ layout: landing
 title: Storage providers
 ---
 
+
 <!-- Hero and nav -->
-<div class="hero is-relative is-theme-primary has-waves-bottom">
+<div class="hero is-theme-primary case-study-logo-container">
     {{> navbar-fade}}
 
     <div id="main-hero" class="hero-body">
-        <div class="container">
+        <div class="container has-text-centered">
             <div class="columns is-vcentered">
-                <div class="column is-5 is-header-caption">
-                    <h1 class="title main-title">
-                        Powerful client and pricing management
+                <div class="column is-12 has-text-centered is-subheader-caption">
+                    <h1 class="title is-2">
+                        A powerful pricing and client management for storage providers
                     </h1>
-                
-                    <p class="buttons">
+
+                    <h2 class="subtitle pt-20 is-12 light-text">
+                        Enable storage deals on your miner, and provide tailored pricing to your clients in just few clicks.
+                    </h2>
+
+                    <p class="has-text-centered pt-20">
                         <a href="https://app.cidgravity.com" class="button button-cta btn-align btn-outlined is-bold light-btn rounded z-index-2">
-                        Get Started for free
+                            Get Started for free
                         </a>
                     </p>
-                </div>
-
-                <div class="column is-8 is-offset-1">
-                    <figure class="image is-3by2 hero-figure is-pushed">
-                        <img src="assets/img/app/providers/pricing-rules.svg" alt="" />
-                    </figure>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Deployed in < 30 minutes -->
-<div class="section section-white is-medium is-relative">
+<!-- Benefits from becoming a CIDgravity storage provider -->
+<div id="services" class="section section-white is-medium">
     <div class="container">
         <div class="section-title-wrapper has-text-centered">
-            <h2 class="section-title-landing primary-text pb-50">Deployed in less than 30 minutes</h2>
+            <h2 class="title primary-text section-title has-text-centered">Why choose CIDgravity for being a storage provider?</h2>
         </div>
 
         <div class="content-wrapper">
             <div class="columns is-vcentered">
+                <div class="column is-12">
+                    <div class="columns is-vcentered is-multiline">
+                        <div class="column is-4">
+                            <div class="feature-card card-sm light-bordered has-text-centered">
+                                <div class="card-title">
+                                    <h4>Free deals</h4>
+                                </div>
+                                <div class="card-feature-description">
+                                    <span>
+                                        Gain access to free deals from CIDgravity clients immediately upon claiming your miner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="column is-4 has-text-centered">
-                    <h3 class="is-3 small-feature accent-text">Claim a storage provider address</h3>
-                    <p class="mb-20 is-tablet-padded accent-text">
-                        To verify ownership of this address
+                        <div class="column is-4">
+                            <div class="feature-card card-sm light-bordered has-text-centered">
+                                <div class="card-title">
+                                    <h4>Free deals</h4>
+                                </div>
+                                <div class="card-feature-description">
+                                    <span>
+                                        Gain access to free deals from CIDgravity clients immediately upon claiming your miner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-4">
+                            <div class="feature-card card-sm light-bordered has-text-centered">
+                                <div class="card-title">
+                                    <h4>Free deals</h4>
+                                </div>
+                                <div class="card-feature-description">
+                                    <span>
+                                        Gain access to free deals from CIDgravity clients immediately upon claiming your miner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lightweight and unpriviled connector -->
+<section class="section section-primary is-small is-relative">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-5">
+                <div class="side-feature-text">
+                    <h2 class="title is-3 clean-text light-text">
+                        Lightweight and unpriviled connector script
+                    </h2>
+
+                    <p class="pt-20 subtitle light-text">
+                        The CIDgravity connector is an unprivileged open source python script. 
+                        It leverages the standard dealFilter hooks called on each deal request.
+                        <br /><br />
+                        It does NOT require to open any ports, need access to any Filecoin keys, nor run as a deamon. 
                     </p>
-                    
-                    <div class="feature-sm mt-30">
-                        <img class="is-card-reveal" src="assets/img/app/providers/claim-miner.svg" alt="" />
+
+                    <div class="button-wrap pt-20">
+                        <a href="https://github.com/CIDgravity/CIDgravity-X" class="button button-cta light-btn btn-outlined is-bold">
+                            Check it on Github
+                            <i class="ml-4 fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-7 is-offset-1">
+                <img class="large-img" src="assets/img/connector_code.png" alt="Install CIDgravity connector script" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Deployed in less than 30 minutes -->
+<div id="about" class="section section-white is-medium">
+    <div class="container">
+        <div class="section-title-wrapper">
+            <h2 class="title section-title has-text-centered dark-text text-bold">
+                Deployed in less than 30 minutes
+            </h2>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="columns is-vcentered">
+                <div class="column is-4">
+                    <div class="process-block has-line">
+                        <div class="process-icon is-icon-reveal">
+                            <div class="icon-wrapper">
+                                <i class="im im-icon-Gears-2"></i>
+                                <div class="process-number">1</div>
+                            </div>
+                        </div>
+
+                        <div class="process-info">
+                            <div class="step-number">1</div>
+                            <div class="details">
+                                <div class="motto">Claim address</div>
+                                <p class="description">
+                                    To successfully confirm ownership of your address, we kindly request to sign a message
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="column is-4 has-text-centered">
-                    <h3 class="is-3 small-feature accent-text">Setup the connector</h3>
-                    <p class="mb-20 is-tablet-padded accent-text">
-                        It will be the link between the miner and CIDgravity
-                    </p>
+                <div class="column is-4">
+                    <div class="process-block has-line">
+                        <div class="process-icon is-icon-reveal">
+                            <div class="icon-wrapper">
+                                <i class="im im-icon-Code-Window"></i>
+                                <div class="process-number">2</div>
+                            </div>
+                        </div>
 
-                    <div class="feature-sm mt-30">
-                        <img class="is-card-reveal" src="assets/img/app/providers/setup-connector.svg" alt="" />
+                        <div class="process-info">
+                            <div class="step-number">2</div>
+                            <div class="details">
+                                <div class="motto">Install connector</div>
+                                <p class="description">
+                                    Install our lightweight, unprivileged and open source python source to communicate 
+                                    with all CIDgravity services
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="column is-4 has-text-centered">
-                    <h3 class="is-3 small-feature accent-text">Track deals</h3>
-                    <p class="mb-20 is-tablet-padded accent-text">
-                        Follow your storage business trends with reporting
-                    </p>
-                    
-                    <div class="feature-sm mt-30">
-                        <img class="is-card-reveal" src="assets/img/app/providers/deals-history.svg" alt="" />
+                <div class="column is-4">
+                    <div class="process-block has-line">
+                        <div class="process-icon is-icon-reveal">
+                            <div class="icon-wrapper">
+                                <i class="im im-icon-Ruler"></i>
+                                <div class="process-number">3</div>
+                            </div>
+                        </div>
+
+                        <div class="process-info">
+                            <div class="step-number">3</div>
+                            <div class="details">
+                                <div class="motto">Track deals</div>
+                                <p class="description">
+                                    Tailor your client configurations and pricing models to align seamlessly with the evolving trends in your storage business, 
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="has-text-centered pt-50">
                 <a href="https://app.cidgravity.com" target="_blank" class="button button-cta btn-align primary-btn rounded raised">
-                    Sign up now
+                    Start now for free
                 </a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Important features -->
-<div id="features" class="section section-primary is-medium no-padding-bottom">
+<!-- Features spotlight -->
+<div id="features" class="section section-primary is-small no-padding-bottom">
     <div class="container has-text-centered">
         <div class="section-title-wrapper has-text-centered">
-            <h2 class="section-title-landing secondary-text">Important features</h2>
-            <h4 class="secondary-text">Discover a seamless experience for managing deals flow</h4>
+            <h2 class="section-title-landing white-text">Features spotlight</h2>
+            <h4 class="white-text">Discover a seamless experience for managing deals flow</h4>
         </div>
 
         <div class="content-wrapper">
-            <div class="columns is-vcentered has-text-centered">
+            <div class="columns is-vcentered has-text-centered pt-30">
                 <div class="column is-hidden-mobile"></div>
 
                 <div class="column is-3">
@@ -105,9 +226,9 @@ title: Storage providers
                             </div>
                         </div>
                         
-                        <div class="box-title secondary-text">Pricing management</div>
-                        <div class="box-text is-tablet-padded secondary-text">
-                            Create pricing rules based on different deal criteria (size, duration, etc.)
+                        <div class="box-title white-text ">Pricing management</div>
+                        <div class="is-tablet-padded white-text">
+                            Craft dynamic pricing rules that cater to diverse deal criteria such as size, duration, and more
                         </div>
                     </div>
                 </div>
@@ -120,9 +241,9 @@ title: Storage providers
                             </div>
                         </div>
                         
-                        <div class="box-title secondary-text">Clients management</div>
-                        <div class="box-text is-tablet-padded secondary-text">
-                            Create clients to identify them and apply more advantageous prices
+                        <div class="box-title white-text">Clients management</div>
+                        <div class="is-tablet-padded white-text">
+                            Establish client profiles for streamlined identification and application of preferential pricing strategies
                         </div>
                     </div>
                 </div>
@@ -135,10 +256,10 @@ title: Storage providers
                             </div>
                         </div>
                         
-                        <div class="box-title secondary-text">Storage acceptance logic</div>
+                        <div class="box-title white-text">Storage acceptance logic</div>
                         
-                        <div class="box-text is-tablet-padded secondary-text">
-                            Accept or reject deals based on the status of the sealing pipeline
+                        <div class="is-tablet-padded white-text">
+                            Automatic decisions to accept or decline deals based on the current status of the sealing pipeline
                         </div>
                     </div>
                 </div>
@@ -157,10 +278,10 @@ title: Storage providers
                             </div>
                         </div>
                         
-                        <div class="box-title secondary-text">Blacklist</div>
+                        <div class="box-title white-text">Blacklist</div>
                         
-                        <div class="box-text is-tablet-padded secondary-text">
-                            Prevent certain client from sending deals to your miner
+                        <div class="is-tablet-padded white-text">
+                            Safeguard against specific clients sending deals to your miner by implementing restrictions
                         </div>
                     </div>
                 </div>
@@ -173,9 +294,9 @@ title: Storage providers
                             </div>
                         </div>
 
-                        <div class="box-title secondary-text">Rate limiting</div>
-                        <div class="box-text is-tablet-padded secondary-text">
-                            Protect your miner from too many deals by setting number and size limits
+                        <div class="box-title white-text">Rate limiting</div>
+                        <div class="is-tablet-padded white-text">
+                            Ensure optimal performance of your miner by setting limits, preventing overload and maintaining efficiency
                         </div>
                     </div>
                 </div>
@@ -188,10 +309,10 @@ title: Storage providers
                             </div>
                         </div>
 
-                        <div class="box-title secondary-text">Analytics</div>
+                        <div class="box-title white-text">Analytics</div>
                         
-                        <div class="box-text is-tablet-padded secondary-text">
-                            Access to multiple reporting tools to follow your storage business trends
+                        <div class="is-tablet-padded white-text">
+                            Gain access to a suite of diverse reporting tools, empowering you to track and analyze storage business trends
                         </div>
                     </div>
                 </div>
@@ -201,8 +322,34 @@ title: Storage providers
 
             <div class="pb-60 pt-60 is-title-reveal">
                 <a href="https://app.cidgravity.com" class="button button-cta primary-text btn-align secondary-btn rounded raised">
-                    Get started
+                    Get started for free
                 </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pricing model and rules -->
+<div class="section section-white no-padding-bottom">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-4 is-offset-1">
+                <div class="icon-subtitle">
+                    <i class="fa fa-ruler mb-20"></i>
+                </div>
+
+                <div class="title primary-text quick-feature is-handwritten text-bold">
+                    <h2>Create and manage pricing models</h2>
+                </div>
+
+                <div class="title-divider is-small"></div>
+                <span class="accent-text subtitle">
+                    Unlock access to a variety of deal criteria, enabling the creation of pricing rules to meet the specific needs of your clients
+                </span>
+            </div>
+
+            <div class="column is-6 is-offset-1 has-text-centered">
+                <img class="featured-svg-lg" src="assets/img/app/providers/pricing-rules.svg" alt="Create and manage pricing models" />
             </div>
         </div>
     </div>
@@ -226,12 +373,13 @@ title: Storage providers
 
                 <div class="title-divider is-small"></div>
                 <span class="accent-text subtitle">
-                    Test the entire filtration logic implemented with CIDgravity, using a playground allowing you to simulate a proposal
+                    Test the complete logic integrated with CIDgravity by utilizing a playground that facilitates proposal simulation, 
+                    ensuring robust functionality and accuracy
                 </span>
             </div>
 
             <div class="column is-6 has-text-centered">
-                <img class="featured-svg-lg" src="assets/img/app/providers/playground.svg" alt="" />
+                <img class="featured-svg-lg" src="assets/img/app/providers/playground.svg" alt="Use playground to simulate" />
             </div>
 
             <!-- Desktop -->
@@ -246,14 +394,15 @@ title: Storage providers
 
                 <div class="title-divider is-small"></div>
                 <span class="accent-text subtitle">
-                    Test the entire filtration logic implemented with CIDgravity, using a playground allowing you to simulate a proposal
+                    Test the complete logic integrated with CIDgravity by utilizing a playground that facilitates proposal simulation, 
+                    ensuring robust functionality and accuracy
                 </span>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Powerful dashboards -->
+<!-- Analyse with dashboards -->
 <div class="section section-white no-padding-top">
     <div class="container">
         <div class="columns is-vcentered">
@@ -268,16 +417,17 @@ title: Storage providers
 
                 <div class="title-divider is-small"></div>
                 <span class="accent-text subtitle">
-                    Dashboards allowing you to track all storage and retrieval metrics, your best customers and much more
+                    Utilize dashboards to track storage and retrieval metrics, identify top-performing customers, 
+                    and gain insights into various aspects of your business operations
                 </span>
             </div>
 
             <div class="column is-6 is-offset-1 has-text-centered">
-                <img class="featured-svg-lg" src="assets/img/app/providers/provider-dashboards.svg" alt="" />
+                <img class="featured-svg-lg" src="assets/img/app/providers/provider-dashboards.svg" alt="Analyse with dashboards" />
             </div>
         </div>
     </div>
 </div>
 
 <!--Footer-->
-{{> footer-side-dark}}
+{{> footer-primary}}
