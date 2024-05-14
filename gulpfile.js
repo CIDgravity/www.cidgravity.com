@@ -463,6 +463,7 @@ const build = series(
   concatCssPlugins,
   concatJS,
   process.env.MINIFY_IMAGES === 'true' ? minifyImages : copyImages,
+  copyVideos,
   resetPages,
   prettyHTML,
   compileSCSS,
