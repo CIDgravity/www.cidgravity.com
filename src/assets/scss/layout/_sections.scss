@@ -299,7 +299,7 @@ TABLE OF CONTENTS
   }
 
   .icon-subtitle img {
-    height: 50px;
+    height: 40px;
   }
 
   .title-divider {
@@ -307,6 +307,21 @@ TABLE OF CONTENTS
     width: 80px;
     height: 5px;
     background: $primary;
+
+    &.is-right {
+      margin-left: auto;
+    }
+
+    &.is-centered {
+      margin: 0 auto;
+    }
+  }
+
+  .title-divider-white {
+    margin: 10px 0;
+    width: 80px;
+    height: 5px;
+    background: $white;
 
     &.is-right {
       margin-left: auto;

@@ -290,6 +290,7 @@ function watchFiles() {
   watch(['src/assets/scss/**/*', 'src/assets/scss/*'], compileSCSS)
   watch(['src/assets/js/**/*', 'src/assets/js/*'], concatJS)
   watch('src/assets/img/**/*', copyImages)
+  watch('src/assets/videos/**/*', copyVideos)
 }
 
 function cleanDist(done) {
@@ -313,6 +314,14 @@ function copyImages() {
   return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|ogv|webm)')
     .pipe(newer('dist/assets/img/'))
     .pipe(dest('dist/assets/img/'))
+    .pipe(browserSync.stream())
+}
+
+function copyVideos() {
+  console.info(logSymbols.info, 'Optimizing videos...')
+  return src('src/assets/videos/**/*.+(mp4|mov|gif)')
+    .pipe(newer('dist/assets/videos/'))
+    .pipe(dest('dist/assets/videos/'))
     .pipe(browserSync.stream())
 }
 
@@ -428,6 +437,7 @@ const dev = series(
   jsVendor,
   cssVendor,
   copyImages,
+  copyVideos,
   compileHTML,
   concatPlugins,
   concatCssPlugins,

@@ -24,7 +24,6 @@ TABLE OF CONTENTS
 
 .feature-card {
   display: block;
-  width: 300px;
   height: 200px;
   background-color: $white;
   border-radius: 3px;
@@ -33,6 +32,10 @@ TABLE OF CONTENTS
 
   &.card-md {
     height: 350px;
+  }
+
+  &.card-sm {
+    height: 150px;
   }
 
   &.card-lg {
