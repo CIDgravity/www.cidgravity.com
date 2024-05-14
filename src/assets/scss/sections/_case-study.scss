@@ -132,13 +132,14 @@ TABLE OF CONTENTS
     h4 {
       font-family: $font-main;
       font-size: 1.3rem;
-      color: $blue-grey;
+      color: $primary;
     }
 
     p {
       font-family: $font-text;
-      color: $blue-grey-light;
+      color: $accent;
       margin-bottom: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .tools-list {
@@ -164,9 +165,9 @@ TABLE OF CONTENTS
 
           img {
             display: flex;
-            height: 42px;
-            width: 42px;
-            min-width: 42px;
+            height: 35px;
+            width: 35px;
+            min-width: 35px;
             border-radius: 50%;
           }
         }

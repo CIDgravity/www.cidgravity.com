@@ -50,9 +50,7 @@ function displayCounterValue(className, counterValue, counterUnit = "", decimals
 
 async function loadCidgStats() {
     try {
-
-        // TODO: update the URL to https://service.cidgravity.com/v1/get-cidg-stats after tests
-        const t = await fetch("https://penguin-stirring-ghastly.ngrok-free.app/v1/get-cidg-stats"),
+        const t = await fetch("https://service.cidgravity.com/public/v1/get-cidg-stats"),
         e = await t.json();
 
         if (200 === t.status) {

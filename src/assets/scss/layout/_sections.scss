@@ -46,10 +46,20 @@ TABLE OF CONTENTS
 
   &.section-primary {
     background-color: $primary;
+
+    *::selection {
+      background: $white;
+      color: $primary;
+    }
   }
 
   &.section-white {
     background-color: $white;
+
+    *::selection {
+      background: $primary;
+      color: $white;
+    }
   }
 
   &.section-secondary {
