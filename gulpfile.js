@@ -365,13 +365,6 @@ function minifyImages() {
     .pipe(browserSync.stream())
 }
 
-function copyHtaccess() {
-  console.info(logSymbols.info, "Copying Htaccess file...");
-  return src(["src/.htaccess"])
-    .pipe(dest("dist/"))
-    .pipe(browserSync.stream());
-}
-
 function copyPhp() {
   console.info(logSymbols.info, "Copying PHP files...");
   return src(["src/assets/php/*"])
@@ -432,7 +425,6 @@ const dev = series(
   cleanDist,
   copyFont,
   copyPhp,
-  copyHtaccess,
   copyData,
   jsVendor,
   cssVendor,
@@ -454,7 +446,6 @@ const build = series(
   cleanDist,
   copyFont,
   copyPhp,
-  copyHtaccess,
   copyData,
   jsVendor,
   cssVendor,
