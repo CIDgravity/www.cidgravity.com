@@ -55,7 +55,7 @@ async function loadCidgStats() {
 
         if (200 === t.status) {
             displayCounterValue("clientsServed", e.result.clientServed);
-            displayCounterValue("transactionCompleted", e.result.transactionsCompleted / 1e6, "m");
+            displayCounterValue("transactionCompleted", e.result.transactionsCompleted / 1e6, "M");
             displayCounterValue("storageProvidersEngaged", e.result.storageProvidersEngaged);
             
             // for currentLiveData, convert value from bytes to best unit (TiB, GiB, PiB ...)
