@@ -1,0 +1,6 @@
+<?php
+	$slack_webhook_endpoint = "[SLACK_WEBHOOK_ENDPOINT]"; // need to create a slack app to get this url
+	$recaptcha_secret = "[RECAPTCHA_SECRET]"; // recaptcha secret, after configuring on google recaptcha
+	$sendgrid_api_key = "[SENDGRID_API_KEY]"; // sendgrid api key to send emails
+	$sendgrid_registered_from = '[VALID_SENDGRID_FROM_EMAIL]'; // must be a valid email, verified on sendgrid side
+?>

@@ -1,2 +1,8 @@
 # IDE
 .idea
+.vscode
+node_modules
+old_pages
+src/assets/php/config.php
+dist/assets/php/config.php
+dist/website.zip
