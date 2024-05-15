@@ -1,21 +1,16 @@
 <?php
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-
-	// DO NOT EDIT AFTER THIS LINE
 	include('./config.php');
 	
 	// Handle contact form to email using sendgrid API
-	function handleContactFormToEmail($contact_name, $contact_email, $contact_phone, $contact_message, $sendgrid_api_key, $sendgrid_registered_from)
+	function handleContactFormToEmail($contact_name, $contact_email, $contact_phone, $contact_message, $api_key, $mail_registered_from)
 	{
 		// Send the email using sendgrid API
 		$curl = curl_init();
 
 		// Define some variables
 		$mail_body = "<h2>New e-mail received from CIDgravity contact form</h2>A new visitor has sent you a request via the site's contact form. Here is all his information<ul><li>Name: $contact_name</li><li>Email: $contact_email</li><li>Phone: $contact_phone</li></ul><br /><hr /><br />Here is also the content of his request:<br /><br /><strong>$contact_message</strong>";
-		$mail_subject = "[CONTACT] New message from CIDgravity contact form"
-		$mail_from_name = "CIDgravity contact"
+		$mail_subject = "[CONTACT] New message from CIDgravity contact form";
+		$mail_from_name = "CIDgravity contact";
 
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => "https://api.sendgrid.com/v3/mail/send",
@@ -25,9 +20,9 @@
 			CURLOPT_TIMEOUT => 30,
 			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 			CURLOPT_CUSTOMREQUEST => "POST",
-			CURLOPT_POSTFIELDS => "{\"personalizations\": [{\"to\": [{\"email\": \"$sendgrid_registered_from\"}]}],\"from\": {\"email\": \"$sendgrid_registered_from\", \"name\": \"$mail_from_name\"},\"subject\": \"$mail_subject\",\"content\": [{\"type\": \"text/html\", \"value\": \"$mail_body\"}]}",
+			CURLOPT_POSTFIELDS => "{\"personalizations\": [{\"to\": [{\"email\": \"$mail_registered_from\"}]}],\"from\": {\"email\": \"$mail_registered_from\", \"name\": \"$mail_from_name\"},\"subject\": \"$mail_subject\",\"content\": [{\"type\": \"text/html\", \"value\": \"$mail_body\"}]}",
 			CURLOPT_HTTPHEADER => array(
-				"authorization: Bearer $sendgrid_api_key",
+				"authorization: Bearer $api_key",
 				"cache-control: no-cache",
 				"content-type: application/json"
 			),
@@ -39,10 +34,10 @@
 		curl_close($curl);
 
 		if ($err) {
-			return false
+			return false;
+		} else {
+			return true;
 		}
-
-		return true
 	}
 
 	// Handle contact form to slack message
@@ -96,10 +91,10 @@
 		curl_close($ch);
 
 		if ($err) {
-			return false
+			return false;
+		} else {
+			return true;
 		}
-
-		return true
 	}
 
 	// Retrieve every form values
@@ -109,10 +104,11 @@
 	$message = $_POST["message"];
 
 	// Check captcha
-	$verify = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$_POST["captcha"]), true);
+	$captcha = $_POST["captcha"];
+	$verify = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$captcha), true);
 
 	if ($verify["success"] == false) {
-		print "<div class='alert alert-danger'>Wrong captcha verification. Please reload the page and try again</div>";
+		echo json_encode(array("success" => false, "message" => "Wrong captcha verification. Please reload the page and try again"));
 
 	} else {
 
@@ -122,10 +118,10 @@
 		// Call the function to send the email using Sendgrid API
 		$success_email = handleContactFormToEmail($user_name, $user_email, $user_phone, $message, $sendgrid_api_key, $sendgrid_registered_from);
 
-		if ($success_slack && $success_email) {
-			print "<div class='alert alert-success'>Your request has been sent to our team !</div>";
+		if ($success_slack == true && $success_email == true) {
+			echo json_encode(array("success" => true, "message" => "Your request has been sent to our team, we will answer you shortly!"));
 		} else {
-			print "<div class='alert alert-danger'>Unable to send your request, please try again in few minutes</div>";
+			echo json_encode(array("success" => false, "message" => "Unable to send your request, please try again in few minutes"));
 		}
 	}
 ?>

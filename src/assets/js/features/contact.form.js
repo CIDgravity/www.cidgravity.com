@@ -8,8 +8,16 @@ function sendContact() {
 		    data:'name='+$("#name").val()+'&captcha='+$("#g-recaptcha-response").val()+'&email='+$("#email").val()+'&phoneNumber='+$("#phoneNumber").val()+'&message='+$(message).val(),
 		    type: "POST",
 		    success:function(data){
-				var successBlock = '<h4 class="message-header">' + data + '</h4>';
-		        $("#mail-status").html(successBlock);
+				var parsedData = JSON.parse(data)
+				var returnMessageBlock = '';
+		    
+				if(!parsedData.success) {
+					returnMessageBlock = '<div class="message msg-danger"><h4 class="message-header">Something wrong</h4><div class="message-body">' + parsedData.message + '</div></div>';
+				} else {
+					returnMessageBlock = '<div class="message msg-success"><h4 class="message-header">Success</h4><div class="message-body">' + parsedData.message + '</div></div>';
+				}
+				
+		  		$("#mail-status").html(returnMessageBlock);
 		    },
 		    error:function (){
 
