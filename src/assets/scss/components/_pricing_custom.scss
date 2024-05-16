@@ -61,6 +61,12 @@ tbody th {
   border-bottom: 1px solid #eee;
 }
 
+@media only screen and (max-width: 1023px) {
+  .table-responsive {
+    overflow-x: scroll !important;
+  }
+}
+
 /* Help tooltips */
 .tooltip {
   position: relative;
