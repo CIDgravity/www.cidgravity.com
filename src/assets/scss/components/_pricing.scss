@@ -1710,25 +1710,10 @@ TABLE OF CONTENTS
 .is-pricing-card-bordered {
   border-radius: 6px;
   border: 1px solid $primary;
-
-  .pricing-icon {
-    position: relative;
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background: #e0ecff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    z-index: 2;
-
-    img {
-      height: 38px;
-      width: 38px;
-      display: block;
-    }
-  }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .plan-name {
     font-family: $font-main;
@@ -1749,47 +1734,18 @@ TABLE OF CONTENTS
     }
   }
 
-  .plan-price {
-    font-size: 2rem;
-    font-weight: 500;
-    color: $primary;
-
-    &:before {
-      content: '$';
-      font-size: 60%;
-    }
-  }
-
-  .price-per {
-    font-weight: 500;
-  }
-
   .plan-action {
-    margin-top: 20px;
+    margin-top: auto; /* Ensure it goes to the bottom */
+    align-self: center; /* Center it horizontally */
   }
 }
 
 .is-pricing-card {
   border-radius: 6px;
-
-  .pricing-icon {
-    position: relative;
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background: #e0ecff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    z-index: 2;
-
-    img {
-      height: 38px;
-      width: 38px;
-      display: block;
-    }
-  }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .plan-name {
     font-family: $font-main;
@@ -1810,18 +1766,9 @@ TABLE OF CONTENTS
     }
   }
 
-  .plan-price {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: $primary;
-  }
-
-  .price-per {
-    font-weight: 500;
-  }
-
   .plan-action {
-    margin-top: 20px;
+    margin-top: auto; /* Ensure it goes to the bottom */
+    align-self: center; /* Center it horizontally */
   }
 }
 
