@@ -7,23 +7,25 @@ To use this template, your computer needs:
 
 ## Usage
 
-1. enable pnpm with corepack
+1. Install depedencies
 
 ```bash
-corepack enable
-corepack prepare pnpm@latest --activate
+npm install
 ```
 
-> _corepack is installed with Node.js from **v16.13.x**, if your version is below, install it with: `npm install -g corepack`, or upgrade Node.js_ 
-
-2. Install depedencies
+2. To start development server (running on port 3000 with live reload)
 
 ```bash
-pnpm i
+npm run dev
 ```
 
-3. To start development server
+3. To build for production
 
 ```bash
-pnpm dev
+npm run build
 ```
+
+## Deployment
+
+The website is already built, and the compiled filed are in the `dist` folder.
+For production deployment, use the files in the `dist` folder. You can, for example, copy the contents to `/var/www/html` or any other directory served by your web server.
