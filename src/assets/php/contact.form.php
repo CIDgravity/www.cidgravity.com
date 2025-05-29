@@ -1,5 +1,5 @@
 <?php
-	include('./config.php');
+	include('../../../php/config.php');
 	
 	// Handle contact form to email using sendgrid API
 	function handleContactFormToEmail($contact_name, $contact_email, $contact_phone, $contact_message, $api_key, $mail_registered_from)
