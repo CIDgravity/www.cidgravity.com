@@ -7,3 +7,5 @@ src/assets/php/config.php
 dist/assets/php/config.php
 dist/website.zip
 node_modules
+dist
+php/config.php
