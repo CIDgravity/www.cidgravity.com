@@ -218,7 +218,6 @@ function concatJS() {
     'src/assets/js/form/datetime.js',
     'src/assets/js/form/input.js',
     'src/assets/js/form/select.js',
-    'src/assets/js/features/contact.form.js',
     'src/assets/js/features/stats.js',
     'src/assets/js/main.js',
   ])
@@ -365,12 +364,6 @@ function minifyImages() {
     .pipe(browserSync.stream())
 }
 
-function copyPhp() {
-  console.info(logSymbols.info, "Copying PHP files...");
-  return src(["src/assets/php/*"])
-    .pipe(dest("dist/assets/php"))
-    .pipe(browserSync.stream());
-}
 
 function copyFont() {
   console.info(logSymbols.info, 'Copying Font files...')
@@ -424,7 +417,6 @@ const setup = series(setupBulma)
 const dev = series(
   cleanDist,
   copyFont,
-  copyPhp,
   copyData,
   jsVendor,
   cssVendor,
@@ -445,7 +437,6 @@ const dev = series(
 const build = series(
   cleanDist,
   copyFont,
-  copyPhp,
   copyData,
   jsVendor,
   cssVendor,
